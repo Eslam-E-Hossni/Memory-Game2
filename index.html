@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="container">
+    <div class="gameHeader">
+      <h1 class="title">Memory Game</h1>
+      <div class="info">
+        <ul class="rate global">
+          <li>
+            <i class="fas fa-star"></i>
+          </li>
+          <li>
+            <i class="fas fa-star"></i>
+          </li>
+          <li>
+            <i class="fas fa-star"></i>
+          </li>
+        </ul>
+        <span class="moves global">0 MOVE(S)</span>
+        <span class="timer global">0 Min , 0 Sec</span>
+      </div>
+    </div>
+    <div class="gameBody">
+
+      <div class="card" type="plane">
+        <i class="fas fa-paper-plane"></i>
+      </div>
+      <div class="card" type="plane">
+        <i class="fas fa-paper-plane"></i>
+      </div>
+
+      <div class="card" type="playstation">
+        <i class="fab fa-playstation"></i>
+      </div>
+      <div class="card" type="playstation">
+        <i class="fab fa-playstation"></i>
+      </div>
+
+      <div class="card" type="bowling">
+        <i class="fas fa-bowling-ball"></i>
+      </div>
+      <div class="card" type="bowling">
+        <i class="fas fa-bowling-ball"></i>
+      </div>
+
+      <div class="card" type="car">
+        <i class="fas fa-car"></i>
+      </div>
+      <div class="card" type="car">
+        <i class="fas fa-car"></i>
+      </div>
+
+      <div class="card" type="truck">
+        <i class="fas fa-truck-moving"></i>
+      </div>
+      <div class="card" type="truck">
+        <i class="fas fa-truck-moving"></i>
+      </div>
+
+      <div class="card" type="video">
+        <i class="fas fa-video"></i>
+      </div>
+      <div class="card" type="video">
+        <i class="fas fa-video"></i>
+      </div>
+
+      <div class="card" type="diamound">
+        <i class="far fa-gem"></i>
+      </div>
+      <div class="card" type="diamound">
+        <i class="far fa-gem"></i>
+      </div>
+
+      <div class="card" type="anchor">
+        <i class="fas fa-anchor"></i>
+      </div>
+      <div class="card" type="anchor">
+        <i class="fas fa-anchor"></i>
+      </div>
+    </div>
+  </div>
+  <div class="popup-modal">
+    <div class="popup-inner">
+      <h2>Congratulations 🎉</h2>
+      <span id="closeBtn">x</span>
+      <div class="content">
+        <p>Congratulations you're a winner 🎉🎉</p>
+        <p>You made ( <span id="final-moves"></span> ) moves</p>
+        <p>in: ( <span id="final-time"></span> )</p>
+        <p>Rating: <span id="final-rate" class="rate"></span></p>
+      </div>
+    </div>
+  </div>
+  <audio src="sounds/fail.mp4" class="fail"></audio>
+  <audio src="sounds/success.mp4" class="success"></audio>
+  <audio src="sounds/winner.mp4" class="winner"></audio>
+  <script src="app.js"></script>
+</body>
+</html>

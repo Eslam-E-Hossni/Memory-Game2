@@ -1,0 +1,298 @@
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Permanent Marker', cursive;
+  font-weight: 400;
+  font-size: 18px;
+  position: relative;
+  /* user-select: none; */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  background-color: #222;
+  margin: 0 auto;
+}
+
+.gameHeader {
+  margin-bottom: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.gameHeader .title {
+  font-family: 'Gloria Hallelujah', cursive;
+  line-height: 1.5;
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.gameHeader .info {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  color: #fff;
+}
+
+.global{
+  padding: 5px;
+  height: 100%;
+  flex: 0 0 25%;
+}
+
+.rate li{
+  display: inline-block;
+  font-size: 16px;
+  color: #FFD700;
+  margin: 0 2px;
+}
+
+.gameHeader .info .moves{
+  font-size: 20px;
+}
+
+.gameHeader .info .timer{
+  font-size: 20px;
+}
+
+.gameBody {
+  background-image: linear-gradient(to right bottom, #02AAB0, #00CDAC);
+  padding: 35px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gameBody.no-clicking {
+  pointer-events: none;
+}
+
+.gameBody .card {
+  background-color: #333;
+  flex: 0 0 20%;
+  max-width: 20%;
+  height: 170px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 5px 5px 15px rgb(0 0 0 / .5);
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  position: relative;
+  user-select: none;
+}
+
+.gameBody .card::after {
+  content: "?";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  z-index: 1;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 55px;
+}
+
+.gameBody .card.open,
+.gameBody .card.match {
+  transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
+  -ms-transform: rotateY(0);
+  -o-transform: rotateY(0);
+  animation: flipCard .75s ease;
+  -webkit-animation: flipCard .75s ease;
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+}
+
+.gameBody .card.open {
+  background-color: #00bcd4;
+  pointer-events: none;
+}
+
+.gameBody .card.match {
+  background-color: #4caf50;
+  pointer-events: none;
+}
+
+.gameBody .card.wrong{
+  background-color: crimson;
+  animation: wrong .5s ease-in-out;
+  -webkit-animation: wrong .5s linear;
+}
+
+@keyframes wrong{
+  0%{
+    transform: scale(.75);
+    -webkit-transform: scale(.75);
+    -moz-transform: scale(.75);
+    -ms-transform: scale(.75);
+    -o-transform: scale(.75);
+}
+  75% {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+
+}
+
+@keyframes flipCard {
+	from {
+		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		-webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		-moz-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		-ms-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+		-o-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    animation-timing-function: ease-in;
+}
+
+	40% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+		-webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+		-moz-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+		-ms-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+		-o-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+		animation-timing-function: ease-in;
+}
+
+	60% {
+		transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+		-webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+		-moz-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+		-ms-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+		-o-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+}
+
+	80% {
+		transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+		-webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+		-moz-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+		-ms-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+		-o-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+}
+
+	to {
+		transform: perspective(400px);
+		-webkit-transform: perspective(400px);
+		-moz-transform: perspective(400px);
+		-ms-transform: perspective(400px);
+		-o-transform: perspective(400px);
+}
+}
+
+.gameBody .card.open::after,
+.gameBody .card.match::after {
+  visibility: hidden;
+}
+
+.gameBody .card i {
+  font-size: 40px;
+  color: #fff;
+}
+
+
+.popup-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+  transition: opacity .5s;
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -ms-transition: opacity .5s;
+  -o-transition: opacity .5s;
+}
+
+.popup-modal.show{
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup-modal .popup-inner {
+  margin: 100px auto;
+  max-width: 60%;
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+}
+
+.popup-modal .popup-inner h2 {
+  width: fit-content;
+  padding: 0 10px;
+  font-size: 30px;
+  color: #222;
+  letter-spacing: 5px;
+  font-weight: 400;
+}
+
+.popup-modal .popup-inner #closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup-modal .popup-inner .content {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.popup-modal .popup-inner .content p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.popup-modal .popup-inner .content p {
+  font-size: 25px;
+  font-family: 'Gloria Hallelujah', cursive;
+}
